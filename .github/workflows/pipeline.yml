@@ -18,5 +18,11 @@ jobs:
         run: npm run eslint
       - name: Build the application
         run: npm run build
-      - name: Run tests
+      - name: Run unit tests
         run: npm run test
+      - name: Run E2E tests
+        uses: cypress-io/github-action@v5
+        with: 
+          command: npm run test:e2e
+          start: npm run start-prod
+          wait-on: http://localhost:5001
