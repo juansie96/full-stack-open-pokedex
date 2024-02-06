@@ -23,6 +23,13 @@ primary_region = 'scl'
   timeout = "7s"
   path = "/"
 
+[[http_service.checks]]
+  grace_period = "14s"
+  interval = "30s"
+  method = "GET"
+  timeout = "7s"
+  path = "/health"
+
 [processes]
   app = "node app.js" 
 
