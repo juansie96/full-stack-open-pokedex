@@ -6,11 +6,11 @@ const PORT = process.env.PORT || 3001
 
 app.use(express.static('dist'))
 
-app.listen(PORT, () => {
+app.listen(PORT + 1, () => {
   // eslint-disable-next-line no-console
   console.log(`Server started on port ${PORT}`)
 })
 
 app.get('/version', (req, res) => {
-  res.send('6') // change this string to ensure a new version deployed
+  res.send('7') // change this string to ensure a new version deployed
 })
